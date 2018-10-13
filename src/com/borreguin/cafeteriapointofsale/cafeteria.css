@@ -1,0 +1,103 @@
+
+/* Main Menu Style (Only one pane tab)*/
+.tab-pane {
+    -fx-tab-min-width:120px;
+    -fx-tab-max-width:120px;
+    -fx-tab-min-height:120px;
+    -fx-tab-max-height:120px;
+    -fx-focus-color: transparent;
+}
+
+.tab-down-button {
+    -fx-padding: 0;
+}
+
+.tab-down-button .arrow {
+    -fx-padding: 0;
+}
+
+.tab-pane *.tab-header-area *.tab:selected {
+    -fx-background-color: #CD9D00;
+    -fx-background-radius:0px;
+}
+
+.tab-pane *.tab-header-area *.tab {
+    -fx-background-color: #400000;
+    -fx-background-radius:0px;
+}
+
+.tab-pane *.tab-header-area *.tab-header-background {
+    -fx-background-color:#400000;
+}
+
+.tab-pane *.tab-header-area {
+    -fx-spacing: 0px;
+    -fx-padding: 0px;
+}
+
+.tab-pane *.tab-content-area {
+    -fx-background-color: white;
+}
+
+/* Main App Title Style */
+
+#main-title{
+    -fx-font-family: "Helvetica";
+    -fx-background-color:#800200;
+    -fx-font-weight: bolder;
+    -fx-alignment: center;
+    -fx-font-size: 40;
+    -fx-text-fill: white;
+}
+
+#scanned-product-info{
+    -fx-text-fill: white;
+    -fx-background-color: #CD9D00;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+}
+
+#table-header-1{
+    -fx-text-fill: white;
+    -fx-background-color: #400000;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+    -fx-padding: 15px;
+}
+
+#table-content{
+    -fx-text-fill: #400000;
+    -fx-background-color: white;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: normal;
+    -fx-font-size: 16;
+}
+
+#positive-btn{
+    -fx-text-fill: white;
+    -fx-background-color: #008080;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+    -fx-background-radius: 0;
+}
+
+#negative-btn{
+    -fx-text-fill: white;
+    -fx-background-color: #800200;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+    -fx-background-radius: 0;
+}
+
+#total-title{
+    -fx-text-fill: white;
+    -fx-background-color: #400000;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+    -fx-padding: 15px;
+}
