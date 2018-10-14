@@ -1,6 +1,7 @@
 package com.borreguin.cafeteriapointofsale.DBHelper;
 
 public class ReceiptProductTable {
+
     public static final String RECEIPT_PRODUCT = "receipt_product";
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_PRODUCT = "product_id";

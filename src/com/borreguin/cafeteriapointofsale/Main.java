@@ -1,7 +1,6 @@
 package com.borreguin.cafeteriapointofsale;
 
 import com.borreguin.cafeteriapointofsale.models.Product;
-import com.borreguin.cafeteriapointofsale.models.ScannedProduct;
 import javafx.application.Application;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -31,10 +30,11 @@ public class Main extends Application {
         return imageView;
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////
+    //////////////      APPLICATION      ///////////////
+    ////////////////////////////////////////////////////
 
     public static void main(String[] args) {
-        DBConnection dbConnection = new DBConnection();
         launch(args);
     }
 
@@ -104,7 +104,7 @@ public class Main extends Application {
             }
         });
 
-        HBox salesTabContent = createSalesTabContent();
+        HBox salesTabContent = createMainTabContent();
         salesTab.setContent(salesTabContent);
         salesTabContent.prefHeightProperty().bind(mainMenuTp.heightProperty());
 
@@ -114,17 +114,18 @@ public class Main extends Application {
         return mainMenuTp;
     }
 
-    /////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////
+    ///////////////       MainTab       ////////////////
+    ////////////////////////////////////////////////////
 
-    private HBox createSalesTabContent(){
+    private HBox createMainTabContent(){
         HBox salesTabContent = new HBox();
         salesTabContent.setPadding(new Insets(5,5,5,5));
         salesTabContent.setSpacing(5);
 
-        VBox productSalesSection = createProductSalesSection();
-        VBox totalAndSpecialFoodSection = createTotalAndSpecialFoodSection();
-        VBox activeOrdersSection = createActiveOrdersSection();
+        VBox productSalesSection = transactionLeftSection();
+        VBox totalAndSpecialFoodSection = transactionCenterSection();
+        VBox activeOrdersSection = transactionRightSection();
 
         salesTabContent.widthProperty().addListener((obs, oldVal, newVal)->{
 
@@ -147,7 +148,7 @@ public class Main extends Application {
 
     //////////////////////////////////////////////
 
-    private VBox createProductSalesSection(){
+    private VBox transactionLeftSection(){
         VBox productSalesSection = new VBox();
         productSalesSection.setStyle("-fx-background-color: white;");
         productSalesSection.setSpacing(5);
@@ -175,7 +176,7 @@ public class Main extends Application {
     private VBox productsListContent;
 
     private ArrayList<Product> productsList;
-    private ArrayList<ScannedProduct> scannedProductsList;
+    //private ArrayList<ScannedProduct> scannedProductsList;
 
     private VBox createProductsTableContainer(){
         productsTableContainer = new VBox();
@@ -214,10 +215,13 @@ public class Main extends Application {
         productsListContent.setStyle("-fx-border-color: #400000;"+
                 "-fx-border-width: 2px");
 
+
         productsList = new ArrayList<>();
         productsList.add(new Product(1, "Hola",34,45,0));
+        /*
         scannedProductsList = new ArrayList<>();
         scannedProductsList.add(new ScannedProduct(1,2));
+        */
 
         updateProductTableContent();
 
@@ -342,6 +346,7 @@ public class Main extends Application {
     private void updateProductTableContent(){
         productsListContent.getChildren().clear();
 
+        /*
         for (ScannedProduct sp : scannedProductsList) {
             Product product = new Product(0, "",0,0,0);
             boolean productFinded = false;
@@ -393,12 +398,13 @@ public class Main extends Application {
             productsListContent.getChildren().addAll(productContainer);
         }
 
+        */
 
     }
 
     //////////////////////////////////////////////
 
-    private VBox createTotalAndSpecialFoodSection(){
+    private VBox transactionCenterSection(){
         VBox totalAndSpecialFoodSection = new VBox();
 
         totalAndSpecialFoodSection.setSpacing(5);
@@ -414,19 +420,6 @@ public class Main extends Application {
         return totalAndSpecialFoodSection;
     }
 
-    private VBox createActiveOrdersSection(){
-        VBox activeOrdersSection = new VBox();
-
-        activeOrdersSection.setStyle("-fx-background-color: yellow;");
-
-        return activeOrdersSection;
-    }
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////
-
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////
-
     private Label total;
 
     private VBox createTotalContainer(){
@@ -439,18 +432,18 @@ public class Main extends Application {
         total = new Label("$50.00");
 
         totalTitle.setStyle("-fx-background-color: #400000;" +
-                            "-fx-font-family: Helvetica;"+
-                            "-fx-text-fill: white;"+
-                            "-fx-alignment: center;"+
-                            "-fx-font-weight: bold;" +
-                            "-fx-font-size: 28;");
+                "-fx-font-family: Helvetica;"+
+                "-fx-text-fill: white;"+
+                "-fx-alignment: center;"+
+                "-fx-font-weight: bold;" +
+                "-fx-font-size: 28;");
 
         total.setStyle("-fx-background-color: #400000;" +
-                       "-fx-font-family: Helvetica;"+
-                       "-fx-text-fill: white;"+
-                       "-fx-alignment: center;"+
-                       "-fx-font-weight: bold;" +
-                       "-fx-font-size: 46;");
+                "-fx-font-family: Helvetica;"+
+                "-fx-text-fill: white;"+
+                "-fx-alignment: center;"+
+                "-fx-font-weight: bold;" +
+                "-fx-font-size: 46;");
 
         totalContainer.getChildren().addAll(totalTitle, total);
         totalTitle.prefWidthProperty().bind(totalContainer.widthProperty());
@@ -499,20 +492,31 @@ public class Main extends Application {
             productName.prefWidthProperty().bind(preparedFoodContainer.widthProperty());
             productName.setMinHeight(40);
             productName.setStyle("-fx-text-fill: white;" +
-                                 "-fx-background-color: #008080;" +
-                                 "-fx-font-family: Helvetica;" +
-                                 "-fx-font-weight: bold;" +
-                                 "-fx-alignment: center;" +
-                                 "-fx-font-size: 20;" +
-                                 "-fx-padding: 15px;");
+                    "-fx-background-color: #008080;" +
+                    "-fx-font-family: Helvetica;" +
+                    "-fx-font-weight: bold;" +
+                    "-fx-alignment: center;" +
+                    "-fx-font-size: 20;" +
+                    "-fx-padding: 15px;");
 
             preparedFoodContainer.getChildren().addAll(productName);
 
         }
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////
+
+    private VBox transactionRightSection(){
+        VBox activeOrdersSection = new VBox();
+
+        activeOrdersSection.setStyle("-fx-background-color: yellow;");
+
+        return activeOrdersSection;
+    }
 
 
+    ////////////////////////////////////////////////////
+    ///////////////       Home Tab       ///////////////
+    ////////////////////////////////////////////////////
 
 }
