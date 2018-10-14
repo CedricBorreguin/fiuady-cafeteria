@@ -1,7 +1,7 @@
 package com.borreguin.cafeteriapointofsale.DBHelper;
 
-public class ReciptTable {
-    public static final String RECIPT = "recipt";
+public class ReceiptTable {
+    public static final String RECEIPT = "receipt";
     public static final String  COLUMN_ID = "id";
     public static final String  COLUMN_TOTAL = "total";
     public static final String  COLUMN_DATE = "date";
@@ -10,12 +10,12 @@ public class ReciptTable {
             {COLUMN_ID, COLUMN_TOTAL, COLUMN_DATE};
 
     public static final String SQL_CREATE =
-            "CREATE TABLE " + RECIPT + "(" +
+            "CREATE TABLE " + RECEIPT + "(" +
                     COLUMN_ID + " TEXT PRIMARY KEY," +
                     COLUMN_TOTAL + " TEXT," +
-                    COLUMN_DATE + " INTEGER" + ");";
+                    COLUMN_DATE + " TEXT" + ");";
 
     public static final String SQL_DELETE =
-            "DROP TABLE " + RECIPT;
+            "DROP TABLE " + RECEIPT;
 
 }

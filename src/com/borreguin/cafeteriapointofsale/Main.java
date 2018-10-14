@@ -1,5 +1,6 @@
 package com.borreguin.cafeteriapointofsale;
 
+import com.borreguin.cafeteriapointofsale.DBHelper.DBConnection;
 import com.borreguin.cafeteriapointofsale.models.Product;
 import javafx.application.Application;
 import javafx.event.Event;
@@ -13,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 
@@ -35,6 +37,11 @@ public class Main extends Application {
     ////////////////////////////////////////////////////
 
     public static void main(String[] args) {
+        try {
+            DBConnection.getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         launch(args);
     }
 

@@ -1,6 +1,6 @@
 package com.borreguin.cafeteriapointofsale.models;
 
-public class Oders {
+public class Orders {
     private int orderId;
     private int productId;
     private String buyer;
@@ -8,7 +8,9 @@ public class Oders {
     private int status;
     private int qty;
 
-    public Oders(int orderId, int productId, String buyer, String notes, int status, int qty) {
+
+
+    public Orders(int orderId, int productId, String buyer, String notes, int status, int qty) {
         this.orderId = orderId;
         this.productId = productId;
         this.buyer = buyer;

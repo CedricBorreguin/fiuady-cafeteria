@@ -7,7 +7,7 @@ public class Product {
     private int price;
     private int type;
 
-    public Product(long productId, String name, int priceInt, int priceCents, int type) {
+    public Product(long productId, String name, int price, int type) {
         this.productId = productId;
         this.name = name;
         this.price = price;
