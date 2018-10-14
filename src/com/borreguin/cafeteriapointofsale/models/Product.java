@@ -4,15 +4,13 @@ public class Product {
 
     private long productId;
     private String name;
-    private int priceInt;
-    private int priceCents;
+    private int price;
     private int type;
 
     public Product(long productId, String name, int priceInt, int priceCents, int type) {
         this.productId = productId;
         this.name = name;
-        this.priceInt = priceInt;
-        this.priceCents = priceCents;
+        this.price = price;
         this.type = type;
     }
 
@@ -24,12 +22,8 @@ public class Product {
         return name;
     }
 
-    public int getPriceInt() {
-        return priceInt;
-    }
-
-    public int getPriceCents() {
-        return priceCents;
+    public int getPrice() {
+        return price;
     }
 
     public int getType() {

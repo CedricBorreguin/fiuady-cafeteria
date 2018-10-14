@@ -1,62 +1,28 @@
 package com.borreguin.cafeteriapointofsale.models;
 
+import java.util.Date;
+
 public class Receipt {
 
     private long receiptId;
-    private String seller;
-    private int totalInt;
-    private int totalCents;
-    private int dayOfWeek;
-    private int date;
-    private int time;
+    private int total;
+    private Date date;
 
-    public Receipt(long receiptId, String seller, int totalInt, int totalCents, int dayOfWeek, int day, int month, int year, int time) {
+    public Receipt(long receiptId, int total, Date date) {
         this.receiptId = receiptId;
-        this.seller = seller;
-        this.totalInt = totalInt;
-        this.totalCents = totalCents;
-        this.dayOfWeek = dayOfWeek;
-        this.date = year*10000 + month*100 + day;
-        this.time = time;
+        this.total = total;
+        this.date = date;
     }
 
     public long getReceiptId() {
         return receiptId;
     }
 
-    public String getSeller() {
-        return seller;
+    public int getTotal() {
+        return total;
     }
 
-    public int getTotalInt() {
-        return totalInt;
-    }
-
-    public int getTotalCents() {
-        return totalCents;
-    }
-
-    public int getDayOfWeek() {
-        return dayOfWeek;
-    }
-
-    public int getDate() {
+    public Date getDate() {
         return date;
-    }
-
-    public int getDay(){
-        return date%100;
-    }
-
-    public int getMonth(){
-        return (date/100)%100;
-    }
-
-    public int getYear(){
-        return date/10000;
-    }
-
-    public int getTime() {
-        return time;
     }
 }

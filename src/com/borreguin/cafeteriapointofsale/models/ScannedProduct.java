@@ -20,5 +20,4 @@ public class ScannedProduct {
 
     public void increaseQuantity() {
         this.quantity += 1;
-    }
-}
+    }}
