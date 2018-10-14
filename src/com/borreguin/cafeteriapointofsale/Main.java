@@ -386,7 +386,7 @@ public class Main extends Application {
             separator2.setMinWidth(3);
             separator2.setMaxWidth(3);
 
-            Label productPrice = new Label( "$" + product.getPriceInt() + "." + product.getPriceCents());
+            Label productPrice = new Label( "$" + product.getPrice() );
             productPrice.setId("table-content");
             productPrice.setPadding(new Insets(2,15,2,10));
             productPrice.prefWidthProperty().bind(productPriceHeader.widthProperty());
