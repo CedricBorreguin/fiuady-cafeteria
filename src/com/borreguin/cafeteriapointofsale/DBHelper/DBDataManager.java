@@ -28,7 +28,7 @@ public class DBDataManager {
             e.printStackTrace();
         }
     }
-    
+
     public void insertProduct(Product product) {
         String sql = "INSERT INTO "+ ProductTable.PRODUCT +"("+
                 ProductTable.COLUMN_ID +","+

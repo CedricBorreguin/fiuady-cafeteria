@@ -46,7 +46,7 @@
     -fx-background-color:#800200;
     -fx-font-weight: bolder;
     -fx-alignment: center;
-    -fx-font-size: 40;
+    -fx-font-size: 26;
     -fx-text-fill: white;
 }
 
@@ -55,7 +55,7 @@
     -fx-background-color: #CD9D00;
     -fx-font-family: Helvetica;
     -fx-font-weight: bold;
-    -fx-font-size: 20;
+    -fx-font-size: 14;
 }
 
 #table-header-1{
@@ -63,7 +63,7 @@
     -fx-background-color: #400000;
     -fx-font-family: Helvetica;
     -fx-font-weight: bold;
-    -fx-font-size: 20;
+    -fx-font-size: 14;
     -fx-padding: 15px;
 }
 
@@ -98,6 +98,6 @@
     -fx-background-color: #400000;
     -fx-font-family: Helvetica;
     -fx-font-weight: bold;
-    -fx-font-size: 20;
+    -fx-font-size: 14;
     -fx-padding: 15px;
 }
